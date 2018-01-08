@@ -1,5 +1,7 @@
 package com.hlcui.proxy.mock.mybatis;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 import org.springframework.beans.factory.FactoryBean;
@@ -11,7 +13,7 @@ public class BusinessServiceImpl implements FactoryBean<Object>, InitializingBea
 	private Object proxy;
 
 	private ClassLoader classLoader;
-	
+
 	private Class<?> clazz;
 
 	public BusinessServiceImpl() {
@@ -32,9 +34,19 @@ public class BusinessServiceImpl implements FactoryBean<Object>, InitializingBea
 	}
 
 	public void initProxy() {
-		JdkDynamiceAspect aspect = new JdkDynamiceAspect();
-		proxy = Proxy.newProxyInstance(classLoader,new Class[]{clazz}, aspect);
-		System.out.println(proxy);
+//		JdkDynamiceAspect aspect = new JdkDynamiceAspect();
+		proxy = Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class[] { clazz },
+				new InvocationHandler() {
+
+					@Override
+					public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+						System.out.println("========== i love you ================");
+						return new Object();
+					}
+
+				});
+		// proxy = Proxy.newProxyInstance(classLoader,new Class[]{clazz},
+		// aspect);
 	}
 
 	@Override
@@ -50,5 +62,5 @@ public class BusinessServiceImpl implements FactoryBean<Object>, InitializingBea
 	public void setClazz(Class<?> clazz) {
 		this.clazz = clazz;
 	}
-	
+
 }

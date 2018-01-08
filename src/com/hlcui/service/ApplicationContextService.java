@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * 在spring容器实例化bean完成之前，如果检测到类实现该接口，则会注入spring上下文对象，持有
  * 这个对象，可以通过getBean获取spring管理的所有bean
  */
-@Component
+//@Component
 public class ApplicationContextService implements ApplicationContextAware{
 	
 	public static ApplicationContext context;

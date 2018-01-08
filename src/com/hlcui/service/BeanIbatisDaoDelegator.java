@@ -17,7 +17,7 @@ import com.hlcui.proxy.mock.mybatis.BusinessServiceImpl;
  * @author Administrator
  *
  */
-@Component
+//@Component
 public class BeanIbatisDaoDelegator implements BeanDefinitionRegistryPostProcessor{
 
 	@Override

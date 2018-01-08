@@ -10,6 +10,7 @@ public class TestMockMybatis {
 	public void testMockMybatis(){
 		String[] config = {"applicationContext.xml"};
 		ApplicationContext context = new ClassPathXmlApplicationContext(config);
+		System.out.println(context);
 		AutoDelegetorInterface demo = context.getBean(AutoDelegetorInterface.class);
 		demo.execute();
 	}

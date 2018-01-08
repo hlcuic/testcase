@@ -19,8 +19,8 @@ import com.hlcui.annotation.DataProvider;
  * ，再postContructor，再InitializingBean的afterPropertiesSet(),
  * 再xml中init-method
  */
-@Service
-public class InitBeanService implements InitializingBean,BeanPostProcessor,BeanNameAware{
+//@Service
+public class InitBeanService implements InitializingBean{
 	
 	private String name;
 	
@@ -71,20 +71,6 @@ public class InitBeanService implements InitializingBean,BeanPostProcessor,BeanN
 		System.out.println("InitializingBean....afterPropertiesSet");
 	}
 
-	@Override
-	public Object postProcessBeforeInitialization(Object bean, String beanName)
-			throws BeansException {
-		System.out.println("postProcessBeforeInitialization..."+beanName);
-		return bean;
-	}
-
-	@Override
-	public Object postProcessAfterInitialization(Object bean, String beanName)
-			throws BeansException {
-		System.out.println("postProcessAfterInitialization..."+beanName);
-		return _postProcessAfterInitialization(bean);
-	}
-	
 	private Object _postProcessAfterInitialization(Object bean){
 		if(isProxy(bean)){
 			DynamicProxy proxy = new DynamicProxy(bean);
@@ -107,9 +93,4 @@ public class InitBeanService implements InitializingBean,BeanPostProcessor,BeanN
 		return flag;
 	}
 
-	@Override
-	public void setBeanName(String s) {
-		s = "abcdef";
-	}
-	
 }
