@@ -24,8 +24,7 @@
  		<!-- 注解扫描配置，默认会加载上面beanPostProcessor需要加载的bean，所以如果配置如下的元素，就不需要上面的元素 -->
  		<context:component-scan base-package="com.hlcui"/>
  		
- 		<!-- 实例化Emp对象,调用无参数构造方法,如果没有无参数构造方法会报错 -->
-		<!-- <bean id="emp" class="com.hlcui.entity.Emp" init-method="init"></bean> -->
+		<bean id="initSpringDemo" class="com.hlcui.spring.init.InitSpringDemo" init-method="init"></bean>
 		
 		<!-- 实例化Emp对象，并通过set注入，初始化成员变量的值
 		<bean id="emp2" class="com.hlcui.entity.Emp">
