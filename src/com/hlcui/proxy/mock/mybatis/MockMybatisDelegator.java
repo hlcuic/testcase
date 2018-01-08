@@ -1,9 +1,7 @@
 /**
  * 
  */
-package com.hlcui.service;
-
-import java.util.Arrays;
+package com.hlcui.proxy.mock.mybatis;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -12,27 +10,22 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProce
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.stereotype.Component;
 
-import com.hlcui.proxy.mock.mybatis.BusinessServiceImpl;
-/**
- * @author Administrator
- *
- */
 @Component
-public class BeanIbatisDaoDelegator implements BeanDefinitionRegistryPostProcessor{
+public class MockMybatisDelegator implements BeanDefinitionRegistryPostProcessor{
 
 	@Override
-	public void postProcessBeanFactory(ConfigurableListableBeanFactory arg0) throws BeansException {
-		System.out.println(Arrays.toString(arg0.getBeanDefinitionNames()));
-		System.out.println(arg0.getBeanDefinitionCount());
+	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+
 	}
 
 	@Override
 	public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-		GenericBeanDefinition  beanDefinition = createBeanDefinition();
-		registry.registerBeanDefinition("emp", beanDefinition);
+		GenericBeanDefinition  beanDefinition = generateBeanDefinition();
+		beanDefinition.getPropertyValues().add("clazz",AutoDelegetorInterface.class);
+		registry.registerBeanDefinition("autoDelegetor", beanDefinition);
 	}
 	
-	private GenericBeanDefinition createBeanDefinition() {
+	private GenericBeanDefinition generateBeanDefinition() {
 		GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
 		beanDefinition.setBeanClass(BusinessServiceImpl.class);
 		return beanDefinition;
