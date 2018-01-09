@@ -1,26 +1,27 @@
 /**
  * 
  */
-package com.hlcui.entity;
+package com.hlcui.cache.cqengine;
 
 import java.util.List;
-import com.hlcui.entity.Car;
 
-/**
- * @author Administrator
- * 
- */
+import com.hlcui.cache.cqengine.Car;
+
 public class Car {
+	
 	private int carId;
+	
 	private String description;
+	
 	private String features;
+	
 	private List<String> others;
 
 	public Car() {
+		
 	}
 
 	public Car(int carId, String description, String features, List<String> others) {
-		super();
 		this.carId = carId;
 		this.description = description;
 		this.features = features;
@@ -61,7 +62,8 @@ public class Car {
 
 	@Override
 	public String toString() {
-		return "Car [carId=" + carId + ", description=" + description + ", features=" + features + ", others=" + others
+		return "Car [carId=" + carId + ", description=" + description + ", "
+				+ "features=" + features + ", others=" + others
 				+ "]";
 	}
 
