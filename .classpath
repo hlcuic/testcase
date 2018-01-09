@@ -9,8 +9,6 @@
 	<classpathentry kind="lib" path="libs/spring-expression-3.2.8.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/cqengine-2.1.1.jar"/>
 	<classpathentry kind="lib" path="libs/concurrent-trees-2.0.0.jar"/>
-	<classpathentry kind="lib" path="libs/spring-aop-4.3.10.RELEASE.jar"/>
-	<classpathentry kind="lib" path="libs/spring-tx-3.2.8.RELEASE.jar"/>
 	<classpathentry kind="lib" path="libs/jedis-2.9.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>

@@ -7,8 +7,14 @@ public class JdkDynamiceAspect implements InvocationHandler{
 	
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		System.out.println("================invoke authDelegetor interface=================");
+		doService();
 		return null;
+	}
+	
+	private void doService(){
+		System.out.println("================invoke authDelegetor interface=================");
+		System.out.println("================invoke authDelegetor interface=================");
+		System.out.println("================invoke authDelegetor interface=================");
 	}
 
 }
