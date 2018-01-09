@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.hlcui.service;
+package com.hlcui.spring.extend.inters;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -14,19 +14,19 @@ import org.springframework.stereotype.Component;
  * 在spring容器实例化bean完成之前，如果检测到类实现该接口，则会注入spring上下文对象，持有
  * 这个对象，可以通过getBean获取spring管理的所有bean
  */
-//@Component
-public class ApplicationContextService implements ApplicationContextAware{
+@Component
+public class SpringApplicationContext implements ApplicationContextAware{
 	
 	public static ApplicationContext context;
 	
 	@Override
 	public  void setApplicationContext(ApplicationContext context)
 			throws BeansException {
-		ApplicationContextService.context = context;
+		SpringApplicationContext.context = context;
 	}
 	
 	public static ApplicationContext getApplicationContext(){
-		return ApplicationContextService.context;
+		return SpringApplicationContext.context;
 	}
 	
 	@SuppressWarnings("unchecked")
