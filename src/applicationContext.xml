@@ -14,11 +14,73 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
-	<!-- 在使用beanPostProcessor等注解时，需要在xml中配置bean，这样显得比较累赘，可以使用下面的方式配置 -->
-	<!--<context:annotation-config/> -->
+	<!-- <context:annotation-config/> -->
 
-	<!-- 注解扫描配置，默认会加载上面beanPostProcessor需要加载的bean，所以如果配置如下的元素，就不需要上面的元素 -->
 	<context:component-scan base-package="com.hlcui" />
+	
+	<!--引入配置文件中数据库参数 -->
+	<util:properties id="jdbcProperties" location="classpath:db.properties" />
+
+	<!--数据库连接参数的注入 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="#{jdbcProperties.driverClassName}"></property>
+		<property name="url" value="#{jdbcProperties.url}"></property>
+		<property name="username" value="#{jdbcProperties.username}"></property>
+		<property name="password" value="#{jdbcProperties.password}"></property>
+	</bean>
+
+	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx-->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 声明使用注解式事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!--获取sqlSession对象 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mapperLocations" value="classpath:com/hlcui/mapping/*.xml" />
+	</bean>
+
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 设定批量模式 -->
+	<bean id="sqlSessionTemplateBatch" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+		<!--更新采用批量模式 -->
+		<constructor-arg index="1" value="BATCH" />
+	</bean>
+
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.hlcui.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+		<property name="sqlSessionTemplateBeanName" value="sqlSessionTemplateBatch" />
+	</bean>
+
+	<!-- 定义上传文件对象,并且限定文件上传大小 1000kb -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1024000" />
+		<property name="resolveLazily" value="true" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<!-- 定义视图解析器 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- <property name="prefix" value="/web/" /> <property name="suffix" value=".jsp"/> -->
+		<property name="viewClass">
+			<description>
+				使用Tiles来解析视图，Tiles用来组装页面视图，生成最终的HTML页面。
+				除了Tiles外，还可能用Excel、PDF等解析器。
+			</description>
+			<value>org.springframework.web.servlet.view.tiles.TilesJstlView
+			</value>
+		</property>
+
+	</bean>
 
 	<!-- 实例化Emp对象，并通过set注入，初始化成员变量的值 <bean id="emp2" class="com.hlcui.entity.Emp"> 
 		<property name="name" value="jack"></property> <property name="age" value="20"></property> 
@@ -26,9 +88,6 @@
 
 	<!-- 实例化Emp对象，并通过构造器方式注入，初始化成员变量的值 <bean id="emp3" class="com.hlcui.entity.Emp"> 
 		<constructor-arg value="tom"/> <constructor-arg value="30"/> </bean> -->
-
-	<!-- 声明使用注解式事务 -->
-	<!--<tx:annotation-driven transaction-manager="transactionManager" />-->
 
 </beans>
 

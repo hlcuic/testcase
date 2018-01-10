@@ -4,6 +4,7 @@
 package com.hlcui.proxy.mock.mybatis;
 
 import java.beans.Introspector;
+import java.util.Arrays;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -18,7 +19,7 @@ public class MockMybatisDelegator implements BeanDefinitionRegistryPostProcessor
 
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-
+		System.out.println(Arrays.toString(beanFactory.getBeanDefinitionNames()));
 	}
 
 	@Override
