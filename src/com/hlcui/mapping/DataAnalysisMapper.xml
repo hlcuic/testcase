@@ -8,8 +8,15 @@
 		select * from test.traderinfo where id = #{id}
 	</select>
 	
-	<insert id="insert"  parameterType="com.hlcui.model.TraderVo">
+	<insert id="insert" parameterType="com.hlcui.model.TraderVo">
 		insert into test.traderinfo(name)values(#{name})
+	</insert>
+	
+	<insert id="batchInsert" parameterType="java.util.List">
+		insert into test.traderinfo(name)values
+		 <foreach collection="list" index="index" item="item" separator=",">
+               ( #{item.name} )      
+        </foreach>
 	</insert>
 	
 </mapper>

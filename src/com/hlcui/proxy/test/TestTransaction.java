@@ -1,4 +1,4 @@
-package com.hlcui.proxy.transaction;
+package com.hlcui.proxy.test;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +15,6 @@ public class TestTransaction {
 		DataDao dao = (DataDao) context.getBean("dataDao");
 		TraderVo vo = new TraderVo();
 		vo.setName("tom1");
-		dao.insertData(vo);
+		System.out.println(dao.insertData(vo));
 	}
 }

@@ -45,12 +45,12 @@
 		<property name="mapperLocations" value="classpath:com/hlcui/mapping/*.xml" />
 	</bean>
 
-	<!-- DAO接口所在包名，Spring会自动查找其下的类 设定批量模式 -->
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 设定批量模式-->
 	<bean id="sqlSessionTemplateBatch" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 		<!--更新采用批量模式 -->
-		<constructor-arg index="1" value="BATCH" />
-	</bean>
+	<!--	<constructor-arg index="1" value="BATCH" />-->
+	</bean> 
 
 	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

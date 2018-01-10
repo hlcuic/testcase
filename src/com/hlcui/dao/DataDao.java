@@ -1,8 +1,5 @@
 package com.hlcui.dao;
 
-import javax.annotation.Resource;
-
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,9 +20,7 @@ public class DataDao{
 	 */
 	@Transactional
 	public int insertData(TraderVo vo){
-		mapper.insert(vo);
-		int a = 1/0;
-		return 1;
+		return mapper.insert(vo);
 	}
 	
 }
