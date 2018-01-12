@@ -1,7 +1,9 @@
 package com.hlcui.proxy.test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
@@ -66,5 +68,15 @@ public class TestBatchInsertOrUpdate {
 			result.add(vo);
 		}
 		return result;
+	}
+	
+	@Test
+	public void test(){
+		Map<String,TraderVo> map = new HashMap<String,TraderVo>();
+		map.put("1", new TraderVo(1,"tom"));
+		System.out.println(map);
+		TraderVo vo = map.get("1");
+		vo.setName("jack");
+		System.out.println(map);
 	}
 }
