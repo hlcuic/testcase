@@ -1,4 +1,4 @@
-package com.hlcui.jdk.base;
+package com.hlcui.jdk.core;
 
 import java.io.Serializable;
 

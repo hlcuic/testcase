@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.hlcui.jdk.base;
+package com.hlcui.jdk.core;
 
 import java.util.Vector;
 

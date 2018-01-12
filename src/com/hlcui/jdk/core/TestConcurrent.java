@@ -1,4 +1,4 @@
-package com.hlcui.jdk.base;
+package com.hlcui.jdk.core;
 
 import org.junit.Test;
 
