@@ -85,11 +85,15 @@ public class MyQueue {
 				}
 			}
 		});
+		
+		
 		try {
 			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		
 		executors.execute(new Runnable() {
 			@Override
 			public void run() {
