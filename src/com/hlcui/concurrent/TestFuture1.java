@@ -62,10 +62,7 @@ class MyTask implements Callable<Object>{
 	@Override
 	public Object call() throws Exception {
 		try {
-			if(3==num){
-				Thread.sleep(3000);
-			}
-			Thread.sleep(10);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
