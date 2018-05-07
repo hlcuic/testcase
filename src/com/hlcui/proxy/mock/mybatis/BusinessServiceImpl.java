@@ -5,6 +5,9 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.util.ClassUtils;
 
+import com.hlcui.annotation.DataProvider;
+
+@DataProvider
 public class BusinessServiceImpl implements FactoryBean<Object>, InitializingBean {
 
 	private Object proxy;

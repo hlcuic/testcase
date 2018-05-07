@@ -5,6 +5,9 @@ import java.lang.reflect.Method;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
+import com.hlcui.annotation.DataProvider;
+
+@DataProvider
 public class CglibProxyInteceptor implements MethodInterceptor{
 
 	@Override
