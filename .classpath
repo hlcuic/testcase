@@ -10,7 +10,7 @@
 	<classpathentry kind="lib" path="libs/cqengine-2.1.1.jar"/>
 	<classpathentry kind="lib" path="libs/concurrent-trees-2.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/jedis-2.9.0.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="libs/activemq-broker-5.13.1.jar"/>
 	<classpathentry kind="lib" path="libs/activemq-client-5.13.1.jar"/>
 	<classpathentry kind="lib" path="libs/activemq-console-5.13.1.jar"/>
@@ -78,5 +78,46 @@
 	<classpathentry kind="lib" path="libs/zookeeper-3.4.6.jar"/>
 	<classpathentry kind="lib" path="libs/cglib.jar"/>
 	<classpathentry kind="lib" path="libs/asm.jar"/>
+	<classpathentry kind="lib" path="libs/disruptor-3.3.6.jar"/>
+	<classpathentry kind="lib" path="libs/netty-all-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-all-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-buffer-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-buffer-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-build-22-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-build-22.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-http-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-http-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-http2-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-http2-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-memcache-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-memcache-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-redis-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-redis-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-socks-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-socks-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-stomp-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-codec-stomp-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-common-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-common-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-example-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-example-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-handler-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-handler-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-handler-proxy-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-handler-proxy-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-resolver-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-resolver-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-tcnative-1.1.33.Fork26-linux-x86_64-fedora.jar"/>
+	<classpathentry kind="lib" path="libs/netty-tcnative-1.1.33.Fork26-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-rxtx-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-rxtx-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-sctp-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-sctp-4.1.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-udt-4.1.8.Final-sources.jar"/>
+	<classpathentry kind="lib" path="libs/netty-transport-udt-4.1.8.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

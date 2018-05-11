@@ -8,6 +8,8 @@ import javax.jms.JMSException;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
+import javax.jms.Topic;
+
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -22,6 +24,8 @@ public class MqProducer {
 	private Destination destination;
 	
 	private MessageProducer producer;
+	
+	private Topic topic;
 
 	public MqProducer() throws JMSException {
 		this.connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_USER,
@@ -29,15 +33,16 @@ public class MqProducer {
 		this.connection = connectionFactory.createConnection();
 		connection.start();
 		this.session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
-		this.destination = session.createQueue("FirstQueue1");
-		this.producer = session.createProducer(destination);
+//		this.destination = session.createQueue("FirstQueue1");
+		this.topic = session.createTopic("FirstTopic1");
+		this.producer = session.createProducer(topic);
 		this.producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 	}
 	
 	public void sendMessage() throws JMSException{
 		for(int i=0;i<5;i++){
 			TextMessage textMessage = session.createTextMessage("hello world!"+i);
-			producer.send(destination, textMessage);
+			producer.send(topic, textMessage);
 		}
 	}
 
