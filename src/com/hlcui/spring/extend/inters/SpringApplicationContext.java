@@ -3,6 +3,8 @@
  */
 package com.hlcui.spring.extend.inters;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -18,6 +20,11 @@ import org.springframework.stereotype.Component;
 public class SpringApplicationContext implements ApplicationContextAware{
 	
 	public static ApplicationContext context;
+	
+	@PostConstruct
+	private void init(){
+		System.out.println("init SpringApplicationContext....s");
+	}
 	
 	@Override
 	public  void setApplicationContext(ApplicationContext context)

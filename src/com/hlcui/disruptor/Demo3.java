@@ -50,23 +50,23 @@ public class Demo3 {
 
 		// 我们只需要使用 Person::new
 		// 来获取Person类构造函数的引用，Java编译器会自动根据PersonFactory.create方法的签名来选择合适的构造函数。
-		Disruptor<TradeTransaction> disruptor = new Disruptor<>(TradeTransaction::new, bufferSize, threadFactory,
-				ProducerType.SINGLE, new LiteBlockingWaitStrategy());
-		// 使用disruptor创建消费者组C1,C2
-		EventHandlerGroup<TradeTransaction> handlerGroup = disruptor.handleEventsWith(new TradeTransactionVasConsumer(),
-				new TradeTransactionInDBHandler());
-
-		TradeTransactionJMSNotifyHandler jmsConsumer = new TradeTransactionJMSNotifyHandler();
-		// 声明在C1,C2完事之后执行JMS消息发送操作 也就是流程走到C3
-		handlerGroup.then(jmsConsumer);
-
-		disruptor.start();// 启动
-		CountDownLatch latch = new CountDownLatch(1);
-		// 生产者准备
-		executor.submit(new TradeTransactionPublisher(latch, disruptor));
-		latch.await();// 等待生产者完事.
-		disruptor.shutdown();
-		executor.shutdown();
+//		Disruptor<TradeTransaction> disruptor = new Disruptor<>(TradeTransaction::new, bufferSize, threadFactory,
+//				ProducerType.SINGLE, new LiteBlockingWaitStrategy());
+//		// 使用disruptor创建消费者组C1,C2
+//		EventHandlerGroup<TradeTransaction> handlerGroup = disruptor.handleEventsWith(new TradeTransactionVasConsumer(),
+//				new TradeTransactionInDBHandler());
+//
+//		TradeTransactionJMSNotifyHandler jmsConsumer = new TradeTransactionJMSNotifyHandler();
+//		// 声明在C1,C2完事之后执行JMS消息发送操作 也就是流程走到C3
+//		handlerGroup.then(jmsConsumer);
+//
+//		disruptor.start();// 启动
+//		CountDownLatch latch = new CountDownLatch(1);
+//		// 生产者准备
+//		executor.submit(new TradeTransactionPublisher(latch, disruptor));
+//		latch.await();// 等待生产者完事.
+//		disruptor.shutdown();
+//		executor.shutdown();
 
 		System.out.println("总耗时:" + (System.currentTimeMillis() - beginTime));
 	}

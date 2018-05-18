@@ -10,7 +10,7 @@ public class TestThreadLock {
 	
 	@Test
 	public void testCase() {
-		P p = new P();
+		final P p = new P();
 		ExecutorService service = Executors.newFixedThreadPool(3);
 		service.execute(new Runnable(){
 			@Override
