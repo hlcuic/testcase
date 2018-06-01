@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="libs/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="libs/spring-beans-3.2.8.RELEASE.jar"/>
@@ -10,7 +15,6 @@
 	<classpathentry kind="lib" path="libs/cqengine-2.1.1.jar"/>
 	<classpathentry kind="lib" path="libs/concurrent-trees-2.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/jedis-2.9.0.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="libs/activemq-broker-5.13.1.jar"/>
 	<classpathentry kind="lib" path="libs/activemq-client-5.13.1.jar"/>
 	<classpathentry kind="lib" path="libs/activemq-console-5.13.1.jar"/>
@@ -119,5 +123,52 @@
 	<classpathentry kind="lib" path="libs/netty-transport-sctp-4.1.8.Final.jar"/>
 	<classpathentry kind="lib" path="libs/netty-transport-udt-4.1.8.Final-sources.jar"/>
 	<classpathentry kind="lib" path="libs/netty-transport-udt-4.1.8.Final.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="libs/cxf-2.7.16.jar"/>
+	<classpathentry kind="lib" path="libs/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/geronimo-javamail_1.4_spec-1.7.1.jar"/>
+	<classpathentry kind="lib" path="libs/geronimo-jaxws_2.2_spec-1.1.jar"/>
+	<classpathentry kind="lib" path="libs/geronimo-servlet_3.0_spec-1.0.jar"/>
+	<classpathentry kind="lib" path="libs/jaxb-api-2.2.6.jar"/>
+	<classpathentry kind="lib" path="libs/jaxb-impl-2.2.6.jar"/>
+	<classpathentry kind="lib" path="libs/jetty-continuation-8.1.15.v20140411.jar"/>
+	<classpathentry kind="lib" path="libs/jetty-http-8.1.15.v20140411.jar"/>
+	<classpathentry kind="lib" path="libs/jetty-io-8.1.15.v20140411.jar"/>
+	<classpathentry kind="lib" path="libs/jetty-security-8.1.15.v20140411.jar"/>
+	<classpathentry kind="lib" path="libs/jetty-server-8.1.15.v20140411.jar"/>
+	<classpathentry kind="lib" path="libs/jetty-util-8.1.15.v20140411.jar"/>
+	<classpathentry kind="lib" path="libs/neethi-3.0.3.jar"/>
+	<classpathentry kind="lib" path="libs/spring-aop-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-asm-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-beans-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-context-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-core-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-expression-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-jms-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-tx-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/spring-web-3.0.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="libs/stax2-api-3.1.4.jar"/>
+	<classpathentry kind="lib" path="libs/woodstox-core-asl-4.4.1.jar"/>
+	<classpathentry kind="lib" path="libs/wsdl4j-1.6.3.jar"/>
+	<classpathentry kind="lib" path="libs/wss4j-1.6.18.jar"/>
+	<classpathentry kind="lib" path="libs/xml-resolver-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/xmlschema-core-2.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/download/eclipse-jee-mars-R-win32/eclipse/plugins/org.apache.axis_1.4.0.v201411182030/lib/axis.jar"/>
+	<classpathentry kind="lib" path="D:/download/eclipse-jee-mars-R-win32/eclipse/plugins/org.apache.commons.discovery_0.2.0.v201004190315/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="D:/download/eclipse-jee-mars-R-win32/eclipse/plugins/javax.xml.rpc_1.1.0.v201209140446/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="D:/download/eclipse-jee-mars-R-win32/eclipse/plugins/javax.xml.soap_1.2.0.v201005080501/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="D:/download/eclipse-jee-mars-R-win32/eclipse/plugins/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="D:/download/eclipse-jee-mars-R-win32/eclipse/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

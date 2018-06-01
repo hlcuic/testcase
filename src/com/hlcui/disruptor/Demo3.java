@@ -3,7 +3,10 @@ package com.hlcui.disruptor;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import com.lmax.disruptor.LiteBlockingWaitStrategy;
 import com.lmax.disruptor.dsl.Disruptor;
@@ -36,8 +39,12 @@ public class Demo3 {
 		 */
 		// 以上代码主要用来设置RingBuffer.
 		int bufferSize = 1024;
-		ExecutorService executor = Executors.newFixedThreadPool(4);
 		ThreadFactory threadFactory = Executors.defaultThreadFactory();
+		ExecutorService executor = new ThreadPoolExecutor(1, 3,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(),
+                threadFactory);
+		
 		/*
 		 * Disruptor<TradeTransaction> disruptor = new
 		 * Disruptor<TradeTransaction>(new EventFactory<TradeTransaction>() {

@@ -8,7 +8,8 @@ import com.lmax.disruptor.dsl.Disruptor;
 public class TradeTransactionPublisher implements Runnable {  
     Disruptor<TradeTransaction> disruptor;    
     private CountDownLatch latch;  
-    private static int LOOP=10;//生产者发送10条消息   
+  //生产者发送10条消息
+    private static int LOOP=10;   
       
     public TradeTransactionPublisher(CountDownLatch latch,Disruptor<TradeTransaction> disruptor) {    
         this.disruptor=disruptor;    
