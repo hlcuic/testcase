@@ -15,6 +15,7 @@ import com.hlcui.annotation.DataProvider;
 ////		provider.addIncludeFilter(new AnnotationTypeFilter(DataProvider.class));
 ////		Set<BeanDefinition> sets = provider.findCandidateComponents("com.hlcui");
 ////		for (BeanDefinition bf : sets) {
+
 ////			System.out.println(bf.getBeanClassName());
 ////		}
 //	}
