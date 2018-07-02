@@ -20,7 +20,8 @@
 	
 	<!--引入配置文件中数据库参数 -->
 	<util:properties id="jdbcProperties" location="classpath:db.properties" />
-
+	<import resource="classpath:dubbo-provider.xml"/>
+	
 	<!--数据库连接参数的注入 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
