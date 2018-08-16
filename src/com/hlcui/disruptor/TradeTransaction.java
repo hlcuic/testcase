@@ -1,9 +1,7 @@
 package com.hlcui.disruptor;
 
 public class TradeTransaction {
-	// 交易ID
 	private String id;
-	// 交易金额
 	private double price;
 
 	public TradeTransaction() {
