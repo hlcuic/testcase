@@ -10,7 +10,7 @@ import com.hlcui.annotation.DataProvider;
 //
 //public class AnnoationScanService {
 //	public static void main(String[] args) {
-//		//true Component ManagedBean Named  //需要jre1.8版本以下
+//		//true Component ManagedBean Named  //
 ////		ClassPathScanningCandidateComponentProvider provider = new ClassPathScanningCandidateComponentProvider(true);
 ////		provider.addIncludeFilter(new AnnotationTypeFilter(DataProvider.class));
 ////		Set<BeanDefinition> sets = provider.findCandidateComponents("com.hlcui");
